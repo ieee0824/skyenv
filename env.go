@@ -58,7 +58,7 @@ func unsetenv(thread *skylark.Thread, fn *skylark.Builtin, args skylark.Tuple, k
 		return skylark.None, errors.New("not mathc type")
 	}
 
-	if err := os.Unsetenv(key, val); err != nil {
+	if err := os.Unsetenv(key); err != nil {
 		return skylark.None, err
 	}
 	return skylark.None, nil
